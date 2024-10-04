@@ -3,7 +3,7 @@
         'name' => 'rodrigo/maga-beackend',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '07e8a144aef81a086bc6635daeeb26e20d0015ba',
+        'reference' => 'f184c79c3e696cd0fa83714da7dc0f8ab81c5a4b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -184,7 +184,7 @@
         'rodrigo/maga-beackend' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '07e8a144aef81a086bc6635daeeb26e20d0015ba',
+            'reference' => 'f184c79c3e696cd0fa83714da7dc0f8ab81c5a4b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -3,6 +3,8 @@
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
+use Dotenv\Dotenv;
+
 
 require_once "vendor/autoload.php";
 
@@ -11,6 +13,9 @@ $config = ORMSetup::createAttributeMetadataConfiguration(
     paths: [__DIR__ . '/..'], // Caminho para suas entidades
     isDevMode: true
 );
+
+$dotenv = Dotenv::createImmutable(__DIR__.'/..');
+$dotenv->load();
 
 // Configurando a conexão com o banco de dados PostgreSQL
 $connectionParams = [

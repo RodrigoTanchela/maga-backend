@@ -16,7 +16,7 @@ class Pessoa
     #[Id]
     #[Column]
     #[GeneratedValue]
-    private readonly int $id;
+    private int $id;
 
     #[Column]
     private string $nome;
