@@ -25,10 +25,9 @@ class Contato
     #[ManyToOne(targetEntity: Pessoa::class, inversedBy: 'contatos')]
     private Pessoa $pessoa; // Referência à Pessoa
 
-    public function __construct(bool $tipo, string $descricao)
+    public function __construct()
     {
-        $this->tipo = $tipo;
-        $this->descricao = $descricao;
+
     }
 
     // Getters

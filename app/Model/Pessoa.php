@@ -66,7 +66,7 @@ class Pessoa
         $contato->setPessoa($this);
     }
 
-    public function contatos():iterable {
+    public function getContatos():iterable {
         return $this->contatos;
     }
 
