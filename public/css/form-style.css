@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Mantém a largura máxima do formulário */
+    box-sizing: border-box; /* Para incluir padding e border na largura total */
+}
+
+button {
+    color: #fff; /* Altera a cor do texto do botão para branco */
+    border: none;
+    background-color: #4CAF50; /* Altera a cor de fundo do botão */
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 10px; /* Aumenta o preenchimento do botão */
+    margin: 15px 0; /* Ajusta a margem para dar mais espaço */
+    cursor: pointer; /* Adiciona o cursor de ponteiro ao passar o mouse */
+    border-radius: 4px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave para o efeito hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Adiciona uma cor mais escura para o título */
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666; /* Cor cinza para os rótulos */
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Para incluir padding e border na largura total */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Mantém a cor de fundo verde */
+    border: none;
+    border-radius: 4px; /* Bordas arredondadas */
+    color: white; /* Mantém o texto branco */
+    font-size: 16px;
+    cursor: pointer; /* Adiciona o cursor de ponteiro */
+    transition: background-color 0.3s; /* Transição suave para o efeito hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+a:hover {
+    text-decoration: underline;
+}

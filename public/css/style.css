@@ -1,0 +1,95 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 20px;
+    color: #333;
+}
+
+/* Estilo do título */
+h1 {
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo do campo de busca */
+#search {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px;
+
+}
+
+/* Estilo do cabeçalho da tabela */
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilo das células */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilo das linhas ímpares */
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo do hover nas linhas */
+tbody tr:hover {
+    background-color: #e9f9e9;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-sm {
+    font-size: 12px;
+    padding: 3px 8px;
+}
+
+/* Estilo para manter o botão e o formulário na mesma linha */
+.action-buttons {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+button, a{
+    color: #4CAF50;
+    border: none;
+    background-color: #1e1d1dd0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding: 5px;
+    margin: 15px;
+}
+
+.btn-excluir {
+    color: red;
+}
+
+form {
+    display: inline;
+}
