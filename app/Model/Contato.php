@@ -17,7 +17,7 @@ class Contato
     private int $id;
 
     #[Column(type: "boolean")]
-    private bool $tipo; // true para Telefone, false para Email
+    private bool $tipo; 
 
     #[Column(type: "string")]
     private string $descricao;

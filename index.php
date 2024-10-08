@@ -2,66 +2,39 @@
 
 use App\Controller\ContatoController;
 use App\Controller\PessoaController;
+use App\Http\Loader;
+use App\Http\Router;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+// Instância do roteador e do loader de controllers
+$router = new Router();
+$loader = new Loader();
+
+
+$router->addRoute("GET", "/maga-backend/pessoas", fn() => $loader->load("PessoaController", "index"));
+
+$router->addRoute("GET", "/maga-backend/pessoa/create/", fn() => $loader->load("PessoaController", "create"));
+
+$router->addRoute("GET", "/maga-backend/pessoa/edit/{id}", fn($id) => $loader->load("PessoaController", "edit", ['id' => $id]));
+
+$router->addRoute("DELETE", "/maga-backend/pessoa/destroy/{id}", fn($id) => $loader->load("PessoaController", "deletar", ['id' => $id]));
+
+$router->addRoute("GET", "/maga-backend/contatos", fn() => $loader->load("ContatoController", "index"));
+$router->addRoute("GET", "/maga-backend/contato/create/", fn() => $loader->load("ContatoController", "create"));
+$router->addRoute("GET", "/maga-backend/contato/edit/{id}", fn($id) => $loader->load("ContatoController", "edit", ['id' => $id]));
+
+$router->addRoute("DELETE", "/maga-backend/contato/destroy/{id}", fn($id) => $loader->load("ContatoController", "deletar", ['id' => $id]));
+
+$router->addRoute("POST", "/maga-backend/pessoa/store", fn() => $loader->load("PessoaController", "store"));
+$router->addRoute("POST", "/maga-backend/pessoa/update", fn() => $loader->load("PessoaController", "update"));
+
+$router->addRoute("POST", "/maga-backend/contato/store", fn() => $loader->load("ContatoController", "store"));
+$router->addRoute("POST", "/maga-backend/contato/update", fn() => $loader->load("ContatoController", "update"));
+
+$method = $_SERVER['REQUEST_METHOD'];
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$pessoacontroller = new PessoaController();
-$contatocontroller = new ContatoController();
-
-if($uri == '/maga-backend/pessoas'){
-    $pessoacontroller->index();
-}
-
-if($uri == '/maga-backend/pessoa/create/'){
-    $pessoacontroller->create();
-}
-
-if (preg_match('/^\/maga-backend\/pessoa\/edit\/(\d+)$/', $uri, $matches)) {
-    $id = $matches[1];
-    $pessoacontroller->edit($id);
-}
-
-if($uri == '/maga-backend/pessoa/update'){
-    $pessoacontroller->update();
-}
-
-if (preg_match('/^\/maga-backend\/pessoa\/destroy\/(\d+)$/', $uri, $matches)) {
-    $id = $matches[1];
-    $pessoacontroller->deletar($id);
-}
-
-if ($uri == '/maga-backend/pessoa/store' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $pessoacontroller->store();
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-if($uri == '/maga-backend/contatos'){
-    $contatocontroller->index();
-}
-
-if($uri == '/maga-backend/contato/create/'){
-    $contatocontroller->create();
-}
-
-if (preg_match('/^\/maga-backend\/contato\/edit\/(\d+)$/', $uri, $matches)) {
-    $id = $matches[1];
-    $contatocontroller->edit($id);
-}
-
-if($uri == '/maga-backend/contato/update'){
-    $contatocontroller->update();
-}
-
-if (preg_match('/^\/maga-backend\/contato\/destroy\/(\d+)$/', $uri, $matches)) {
-    $id = $matches[1];
-    $contatocontroller->deletar($id);
-}
-
-if ($uri == '/maga-backend/contato/store' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $contatocontroller->store();
-}
+$router->dispatch($method, $uri);
 
 
 

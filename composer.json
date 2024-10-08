@@ -1,5 +1,5 @@
 {
-  "name": "rodrigo/maga-beackend",
+  "name": "rodrigo/maga-backend",
   "autoload": {
     "psr-4": {
       "App\\": "app/"

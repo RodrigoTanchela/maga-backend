@@ -9,32 +9,29 @@
 <body>
 
     <form action="/maga-backend/contato/store" method="POST">
-        <h1>Cadastrar Pessoa</h1>
-        <label for="tipo">Tipo:</label>
-        <input type="text" name="tipo" id="tipo" required><br>
+        <h1>Cadastrar Contato</h1>
 
-        <label for="descricao">CPF:</label>
+        <label for="pessoa_id">Pessoa:</label>
+        <select name="pessoa_id" id="pessoa_id" required>
+            <option value="" disabled selected>Selecione uma pessoa</option>
+            <?php foreach ($pessoas as $pessoa): ?>
+                <option value="<?= $pessoa->getId() ?>"><?= $pessoa->getNome() ?></option>
+            <?php endforeach; ?>
+        </select><br>
+
+        <!-- Tipo do contato -->
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo" required>
+            <option value="0">Email</option>
+            <option value="1">Telefone</option>
+        </select><br>
+
+        <!-- Descrição do contato -->
+        <label for="descricao">Descrição:</label>
         <input type="text" name="descricao" id="descricao" required><br>
 
         <button type="submit">Salvar</button>
     </form>
+
 </body>
-
-
-<script>
-    let contatoCount = 1;
-
-    function addContato() {
-        const container = document.getElementById('contatos-container');
-        const newContato = document.createElement('div');
-        newContato.classList.add('contato');
-
-        newContato.innerHTML = `
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="contatos[${contatoCount}][telefone]" required><br>
-        `;
-
-        container.appendChild(newContato);
-        contatoCount++;
-    }
-</script>
+</html>
