@@ -36,14 +36,15 @@ DB_PORT=5432
 DB_DATABASE=seu_banco_de_dados
 DB_USERNAME=seu_usuario
 DB_PASSWORD=sua_senha
-
+```
 
 ### 3. Instalar dependências
 
 Instale as dependências do projeto usando o Composer. Isso incluirá bibliotecas como o Doctrine ORM, que é utilizado no projeto.
 
-```bash
+```
 composer install
+```
 
 ### 4. Configurar o banco de dados
 
@@ -57,8 +58,10 @@ crie as tabelas utilizando os comandos SQL apropriados ou através de uma ferram
 ### 6. Acessar o projeto
 Abra seu navegador e acesse:
 
-```bash
+```
 http://localhost/maga-backend/pessoas
+
+```
 
 ### Estrutura do Projeto
 A estrutura do projeto segue o padrão MVC:
